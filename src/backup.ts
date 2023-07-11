@@ -23,7 +23,7 @@ const uploadToS3 = async ({ name, path }: {name: string, path: string}) => {
   await client.send(
     new PutObjectCommand({
       Bucket: bucket,
-      Key: name,
+      Key: 'busy_week/db/' + name,
       Body: createReadStream(path),
     })
   )
